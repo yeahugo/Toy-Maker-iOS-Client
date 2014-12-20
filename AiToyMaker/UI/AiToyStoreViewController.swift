@@ -7,26 +7,27 @@
 //
 
 import UIKit
-import Alamofire
+//import Alamofire
 
-class AiToyStoreViewController: UIViewController,UICollectionViewDataSource {
+class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     let collectionCellIdentifier = "CollectionCell"
-    var data:[String] = []
+    var images:[String]?
+    
     @IBOutlet var collectionView:UICollectionView!
     @IBOutlet var menuView:UIView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.dataSource = self
-        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: collectionCellIdentifier)
+//        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: collectionCellIdentifier)
+        images = ["a.png",  "b.png", "c.png", "d.png", "e.png", "f.png", "g.png", "h.png", "i.png", "j.png", "k.png", "l.png", "m.png"]
         
-        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
-            .response { (request, response, data, error) in
-                println(request)
-                println(response)
-                println(error)
-        }
+//        Alamofire.request(.GET, "https://dl.dropboxusercontent.com/u/7817937/nameko.json")
+//        .responseJSON { (request, response, JSON, error) -> Void in
+////              self.images = JSON?.valueForKey("images") as? [String]
+//              NSLog("images is %@", self.images!)
+//        }
         // Do any additional setup after loading the view.
     }
 
@@ -36,15 +37,23 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource {
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 10
+        return self.images!.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+        var cell:AiCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifier, forIndexPath: indexPath) as AiCollectionViewCell
+        let imageName = (self.images?[indexPath.row])?
+        cell.imageView.image = UIImage(named: imageName!)
+//        let cell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifier, forIndexPath: indexPath) as UICollectionViewCell
+        
         return cell
     }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+    }
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -52,6 +61,5 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
 
 }
