@@ -24,6 +24,27 @@
 			remoteGlobalIDString = D51C087C1A43167E00031840;
 			remoteInfo = AiToyMaker;
 		};
+		D539084D1A45244600538932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		D539084F1A45244600538932 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
+		D5556B221A452480003F2C94 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +59,7 @@
 		D51C08971A43167E00031840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D51C08981A43167E00031840 /* AiToyMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiToyMakerTests.swift; sourceTree = "<group>"; };
 		D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AiToyStoreViewController.swift; path = UI/AiToyStoreViewController.swift; sourceTree = "<group>"; };
+		D53908481A45244600538932 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +101,7 @@
 		D51C087F1A43167E00031840 /* AiToyMaker */ = {
 			isa = PBXGroup;
 			children = (
+				D53908481A45244600538932 /* Alamofire.xcodeproj */,
 				D51C08821A43167E00031840 /* AppDelegate.swift */,
 				D51C08841A43167E00031840 /* ViewController.swift */,
 				D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */,
@@ -115,6 +138,15 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D53908491A45244600538932 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D539084E1A45244600538932 /* Alamofire.framework */,
+				D53908501A45244600538932 /* AlamofireTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,6 +161,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				D5556B231A452480003F2C94 /* PBXTargetDependency */,
 			);
 			name = AiToyMaker;
 			productName = AiToyMaker;
@@ -182,6 +215,12 @@
 			mainGroup = D51C08741A43167E00031840;
 			productRefGroup = D51C087E1A43167E00031840 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = D53908491A45244600538932 /* Products */;
+					ProjectRef = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				D51C087C1A43167E00031840 /* AiToyMaker */,
@@ -189,6 +228,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		D539084E1A45244600538932 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = D539084D1A45244600538932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D53908501A45244600538932 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = D539084F1A45244600538932 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		D51C087B1A43167E00031840 /* Resources */ = {
@@ -236,6 +292,11 @@
 			isa = PBXTargetDependency;
 			target = D51C087C1A43167E00031840 /* AiToyMaker */;
 			targetProxy = D51C08931A43167E00031840 /* PBXContainerItemProxy */;
+		};
+		D5556B231A452480003F2C94 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = Alamofire;
+			targetProxy = D5556B221A452480003F2C94 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 

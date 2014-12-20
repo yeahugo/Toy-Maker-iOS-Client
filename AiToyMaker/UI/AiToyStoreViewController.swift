@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AiToyStoreViewController: UIViewController,UICollectionViewDataSource {
     
@@ -20,6 +21,12 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource {
         self.collectionView.dataSource = self
         self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: collectionCellIdentifier)
         
+        Alamofire.request(.GET, "http://httpbin.org/get", parameters: ["foo": "bar"])
+            .response { (request, response, data, error) in
+                println(request)
+                println(response)
+                println(error)
+        }
         // Do any additional setup after loading the view.
     }
 
