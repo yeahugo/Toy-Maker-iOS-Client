@@ -73,6 +73,10 @@
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="82L-Mn-dzb" id="vnl-zf-4Fr"/>
+                                    <outlet property="delegate" destination="82L-Mn-dzb" id="JTk-br-bK2"/>
+                                </connections>
                             </collectionView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -137,7 +141,7 @@
         <!--Item-->
         <scene sceneID="mAI-Kv-0Aw">
             <objects>
-                <viewController id="28l-Hx-ttu" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ToyDetail" id="28l-Hx-ttu" customClass="AiToyDetailViewController" customModule="AiToyMaker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="w4y-Lh-giO"/>
                         <viewControllerLayoutGuide type="bottom" id="A0Z-Nh-gWN"/>
@@ -145,9 +149,60 @@
                     <view key="view" contentMode="scaleToFill" id="blt-XT-SG2">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="a.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wcw-1b-ePM">
+                                <rect key="frame" x="95" y="149" width="410" height="290"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXV-6B-xbv">
+                                <rect key="frame" x="279" y="103" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="打印时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-1R-hID">
+                                <rect key="frame" x="109" y="465" width="68" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="大小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KID-ud-QAR">
+                                <rect key="frame" x="283" y="465" width="34" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="34" id="UVi-JN-PQD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="零件数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsb-NK-ZdS">
+                                <rect key="frame" x="440" y="465" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Zz6-1R-hID" firstAttribute="centerY" secondItem="KID-ud-QAR" secondAttribute="centerY" id="2J0-LP-vzj"/>
+                            <constraint firstItem="KID-ud-QAR" firstAttribute="top" secondItem="Wcw-1b-ePM" secondAttribute="bottom" constant="25" id="9Ye-Wc-guK"/>
+                            <constraint firstAttribute="centerX" secondItem="bXV-6B-xbv" secondAttribute="centerX" id="GFN-iZ-CqO"/>
+                            <constraint firstAttribute="centerX" secondItem="Wcw-1b-ePM" secondAttribute="centerX" id="Ifk-vC-vLk"/>
+                            <constraint firstItem="Tsb-NK-ZdS" firstAttribute="centerY" secondItem="KID-ud-QAR" secondAttribute="centerY" id="Khg-ml-7qq"/>
+                            <constraint firstItem="Wcw-1b-ePM" firstAttribute="leading" secondItem="blt-XT-SG2" secondAttribute="leadingMargin" constant="79" id="Mx0-NK-6og"/>
+                            <constraint firstItem="Tsb-NK-ZdS" firstAttribute="leading" secondItem="KID-ud-QAR" secondAttribute="trailing" constant="123" id="Zo1-5Z-AgI"/>
+                            <constraint firstAttribute="centerX" secondItem="KID-ud-QAR" secondAttribute="centerX" id="c8G-Vn-ogJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wcw-1b-ePM" secondAttribute="trailing" constant="79" id="hUg-ds-0gd"/>
+                            <constraint firstItem="bXV-6B-xbv" firstAttribute="top" secondItem="w4y-Lh-giO" secondAttribute="bottom" constant="39" id="mz9-hq-XWW"/>
+                            <constraint firstItem="KID-ud-QAR" firstAttribute="leading" secondItem="Zz6-1R-hID" secondAttribute="trailing" constant="105" id="tBU-8b-jEd"/>
+                            <constraint firstItem="Wcw-1b-ePM" firstAttribute="top" secondItem="bXV-6B-xbv" secondAttribute="bottom" constant="25" id="wDv-IH-CW7"/>
+                            <constraint firstItem="A0Z-Nh-gWN" firstAttribute="top" secondItem="KID-ud-QAR" secondAttribute="bottom" constant="65" id="xgQ-kh-o76"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="xd5-du-Bwx"/>
+                    <connections>
+                        <outlet property="portraitImageView" destination="Wcw-1b-ePM" id="8ny-h9-kgF"/>
+                        <outlet property="titleLabel" destination="bXV-6B-xbv" id="6jD-dS-7K3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HpH-6c-FxG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

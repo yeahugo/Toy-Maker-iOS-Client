@@ -13,6 +13,7 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
     
     let collectionCellIdentifier = "CollectionCell"
     var images:[String]?
+    var selectIndex:Int?
     
     @IBOutlet var collectionView:UICollectionView!
     @IBOutlet var menuView:UIView!
@@ -20,8 +21,7 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView.dataSource = self
-//        self.collectionView.registerClass(UICollectionViewCell.self, forCellWithReuseIdentifier: collectionCellIdentifier)
-        images = ["a.png",  "b.png", "c.png", "d.png", "e.png", "f.png", "g.png", "h.png", "i.png", "j.png", "k.png", "l.png", "m.png"]
+        images = ["a.png",  "b.png", "c.png", "d.png", "e.png", "f.png", "g.png", "h.png",  "j.png", "k.png", "l.png", "m.png"]
         
 //        Alamofire.request(.GET, "https://dl.dropboxusercontent.com/u/7817937/nameko.json")
 //        .responseJSON { (request, response, JSON, error) -> Void in
@@ -50,7 +50,15 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
-        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        NSLog("index path is %@", indexPath)
+//        selectIndex = indexPath.row
+//        collectionView.deselectItemAtIndexPath(indexPath, animated: true)
+        let detailViewController:AiToyDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ToyDetail") as AiToyDetailViewController
+        let imageName = self.images?[indexPath.row]
+        detailViewController.portraitImageName = imageName
+//        let portraitImage:UIImage = UIImage(named: imageName!)!
+//        detailViewController.portraitImageView.image = portraitImage
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
     
@@ -58,6 +66,9 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let detailViewController:AiToyDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ToyDetail") as AiToyDetailViewController
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+        NSLog("prepareForSegue!! sender is ")
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }

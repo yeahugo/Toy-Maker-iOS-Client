@@ -10,4 +10,5 @@ import UIKit
 
 class AiCollectionViewCell: UICollectionViewCell {
     @IBOutlet var imageView:UIImageView!
+    @IBOutlet var titleLabel:UILabel!
 }

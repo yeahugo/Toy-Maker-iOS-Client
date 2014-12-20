@@ -14,6 +14,7 @@
 		D51C088D1A43167E00031840 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51C088B1A43167E00031840 /* LaunchScreen.xib */; };
 		D51C08991A43167E00031840 /* AiToyMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C08981A43167E00031840 /* AiToyMakerTests.swift */; };
 		D51C08A31A4319B300031840 /* AiToyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */; };
+		D51E70AA1A45B16E00394ACB /* AiToyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51E70A91A45B16E00394ACB /* AiToyDetailViewController.swift */; };
 		D5556B3B1A45757B003F2C94 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = D5556B271A45757B003F2C94 /* a.png */; };
 		D5556B3C1A45757B003F2C94 /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = D5556B281A45757B003F2C94 /* b.png */; };
 		D5556B3D1A45757B003F2C94 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = D5556B291A45757B003F2C94 /* c.png */; };
@@ -80,6 +81,7 @@
 		D51C08971A43167E00031840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D51C08981A43167E00031840 /* AiToyMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiToyMakerTests.swift; sourceTree = "<group>"; };
 		D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AiToyStoreViewController.swift; path = UI/AiToyStoreViewController.swift; sourceTree = "<group>"; };
+		D51E70A91A45B16E00394ACB /* AiToyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AiToyDetailViewController.swift; path = UI/AiToyDetailViewController.swift; sourceTree = "<group>"; };
 		D53908481A45244600538932 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
 		D5556B271A45757B003F2C94 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
 		D5556B281A45757B003F2C94 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
@@ -148,6 +150,7 @@
 				D51C08841A43167E00031840 /* ViewController.swift */,
 				D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */,
 				D5556B4F1A45A46B003F2C94 /* AiCollectionViewCell.swift */,
+				D51E70A91A45B16E00394ACB /* AiToyDetailViewController.swift */,
 				D51C08861A43167E00031840 /* Main.storyboard */,
 				D51C08891A43167E00031840 /* Images.xcassets */,
 				D51C088B1A43167E00031840 /* LaunchScreen.xib */,
@@ -366,6 +369,7 @@
 				D51C08851A43167E00031840 /* ViewController.swift in Sources */,
 				D51C08A31A4319B300031840 /* AiToyStoreViewController.swift in Sources */,
 				D5556B501A45A46B003F2C94 /* AiCollectionViewCell.swift in Sources */,
+				D51E70AA1A45B16E00394ACB /* AiToyDetailViewController.swift in Sources */,
 				D51C08831A43167E00031840 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
