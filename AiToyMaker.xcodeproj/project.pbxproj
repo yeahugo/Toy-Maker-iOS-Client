@@ -13,6 +13,7 @@
 		D51C088A1A43167E00031840 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D51C08891A43167E00031840 /* Images.xcassets */; };
 		D51C088D1A43167E00031840 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D51C088B1A43167E00031840 /* LaunchScreen.xib */; };
 		D51C08991A43167E00031840 /* AiToyMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C08981A43167E00031840 /* AiToyMakerTests.swift */; };
+		D51C08A31A4319B300031840 /* AiToyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		D51C08921A43167E00031840 /* AiToyMakerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AiToyMakerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D51C08971A43167E00031840 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D51C08981A43167E00031840 /* AiToyMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiToyMakerTests.swift; sourceTree = "<group>"; };
+		D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AiToyStoreViewController.swift; path = UI/AiToyStoreViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 			children = (
 				D51C08821A43167E00031840 /* AppDelegate.swift */,
 				D51C08841A43167E00031840 /* ViewController.swift */,
+				D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */,
 				D51C08861A43167E00031840 /* Main.storyboard */,
 				D51C08891A43167E00031840 /* Images.xcassets */,
 				D51C088B1A43167E00031840 /* LaunchScreen.xib */,
@@ -213,6 +216,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D51C08851A43167E00031840 /* ViewController.swift in Sources */,
+				D51C08A31A4319B300031840 /* AiToyStoreViewController.swift in Sources */,
 				D51C08831A43167E00031840 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,6 +411,7 @@
 				D51C089E1A43167E00031840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D51C089F1A43167E00031840 /* Build configuration list for PBXNativeTarget "AiToyMakerTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +420,7 @@
 				D51C08A11A43167E00031840 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
