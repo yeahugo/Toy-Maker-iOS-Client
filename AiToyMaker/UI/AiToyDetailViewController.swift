@@ -12,11 +12,14 @@ class AiToyDetailViewController: UIViewController {
 
     @IBOutlet var portraitImageView:UIImageView!
     @IBOutlet var titleLabel:UILabel!
-    var portraitImageName:NSString!
+//    var portraitImageName:NSString!
+    var toyId:String!
+    var hostName:String = "http://192.168.1.103:8000/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.portraitImageView.image = UIImage(named: portraitImageName)
+
+//        self.portraitImageView.image = UIImage(named: portraitImageName)
         // Do any additional setup after loading the view.
     }
 

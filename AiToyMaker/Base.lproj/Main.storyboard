@@ -35,9 +35,23 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WXy-Gc-bxI">
-                                <rect key="frame" x="23" y="179" width="556" height="364"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0GA-Wn-nCj">
+                                <rect key="frame" x="234" y="111" width="133" height="29"/>
+                                <segments>
+                                    <segment title="卡通玩具"/>
+                                    <segment title="拼装玩具"/>
+                                </segments>
+                                <color key="tintColor" red="1" green="0.40168795619999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <action selector="changeModelsFilter:" destination="82L-Mn-dzb" eventType="valueChanged" id="nyW-JB-zQD"/>
+                                </connections>
+                            </segmentedControl>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WXy-Gc-bxI">
+                                <rect key="frame" x="22" y="187" width="556" height="364"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="364" id="Xji-LD-NXQ"/>
+                                </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="fO6-Ys-EjF">
                                     <size key="itemSize" width="113" height="99"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -52,15 +66,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="113" height="99"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="a.png" translatesAutoresizingMaskIntoConstraints="NO" id="t6s-G5-QrI">
-                                                    <rect key="frame" x="10" y="0.0" width="92" height="85"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="a.png" translatesAutoresizingMaskIntoConstraints="NO" id="t6s-G5-QrI">
+                                                    <rect key="frame" x="10" y="0.0" width="92" height="76"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUl-wA-wnq">
+                                                    <rect key="frame" x="15" y="76" width="87" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" red="1" green="0.40168795619999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="t6s-G5-QrI" firstAttribute="centerX" secondItem="RC7-4p-9v5" secondAttribute="centerX" id="Vwg-lb-bSi"/>
+                                            <constraint firstItem="t6s-G5-QrI" firstAttribute="top" secondItem="RC7-4p-9v5" secondAttribute="top" id="gzX-Ub-5xE"/>
+                                            <constraint firstItem="t6s-G5-QrI" firstAttribute="leading" secondItem="RC7-4p-9v5" secondAttribute="leadingMargin" constant="2" id="wfj-AQ-zlW"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="t6s-G5-QrI" secondAttribute="bottom" constant="20" id="x6m-6m-JMP"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="imageView" destination="t6s-G5-QrI" id="vBk-0Q-0dg"/>
+                                            <outlet property="titleLabel" destination="aUl-wA-wnq" id="tQZ-jZ-JrT"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -69,17 +96,6 @@
                                     <outlet property="delegate" destination="82L-Mn-dzb" id="JTk-br-bK2"/>
                                 </connections>
                             </collectionView>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="0GA-Wn-nCj">
-                                <rect key="frame" x="11" y="103" width="579" height="29"/>
-                                <segments>
-                                    <segment title="卡通玩具"/>
-                                    <segment title="拼装玩具"/>
-                                </segments>
-                                <color key="tintColor" red="1" green="0.40168795619999997" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <connections>
-                                    <action selector="changeModelsFilter:" destination="82L-Mn-dzb" eventType="valueChanged" id="nyW-JB-zQD"/>
-                                </connections>
-                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -87,10 +103,22 @@
                             <constraint firstItem="KbG-kb-IoM" firstAttribute="top" secondItem="WXy-Gc-bxI" secondAttribute="bottom" id="5RQ-YD-lHw"/>
                             <constraint firstItem="WXy-Gc-bxI" firstAttribute="leading" secondItem="fjt-WO-Qf9" secondAttribute="leadingMargin" id="7gG-3Q-C2h"/>
                             <constraint firstAttribute="trailingMargin" secondItem="0GA-Wn-nCj" secondAttribute="trailing" constant="-6" id="Fob-cl-6d8"/>
+                            <constraint firstItem="WXy-Gc-bxI" firstAttribute="leading" secondItem="fjt-WO-Qf9" secondAttribute="leadingMargin" constant="6" id="M2q-8L-7sD"/>
+                            <constraint firstItem="WXy-Gc-bxI" firstAttribute="centerX" secondItem="fjt-WO-Qf9" secondAttribute="centerX" id="Nsp-J1-ybd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="WXy-Gc-bxI" secondAttribute="trailing" id="gPN-TG-6Ah"/>
+                            <constraint firstItem="WXy-Gc-bxI" firstAttribute="centerX" secondItem="0GA-Wn-nCj" secondAttribute="centerX" id="mkV-66-zFx"/>
                             <constraint firstItem="0GA-Wn-nCj" firstAttribute="leading" secondItem="fjt-WO-Qf9" secondAttribute="leadingMargin" constant="-6" id="w31-Ve-zhH"/>
                             <constraint firstItem="WXy-Gc-bxI" firstAttribute="top" secondItem="0GA-Wn-nCj" secondAttribute="bottom" constant="48" id="yUf-RF-low"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Fob-cl-6d8"/>
+                                <exclude reference="w31-Ve-zhH"/>
+                                <exclude reference="2c6-gt-QcP"/>
+                                <exclude reference="7gG-3Q-C2h"/>
+                                <exclude reference="gPN-TG-6Ah"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="宝库" id="ozJ-fX-NUY"/>
                     <navigationItem key="navigationItem" id="7Zf-hY-gyr"/>
@@ -152,22 +180,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" image="a.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wcw-1b-ePM">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" image="a.png" translatesAutoresizingMaskIntoConstraints="NO" id="Wcw-1b-ePM">
                                 <rect key="frame" x="95" y="149" width="410" height="290"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXV-6B-xbv">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXV-6B-xbv">
                                 <rect key="frame" x="279" y="103" width="42" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="打印时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-1R-hID">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="打印时间" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zz6-1R-hID">
                                 <rect key="frame" x="109" y="465" width="68" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="大小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KID-ud-QAR">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="大小" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KID-ud-QAR">
                                 <rect key="frame" x="283" y="465" width="34" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="34" id="UVi-JN-PQD"/>
@@ -176,7 +204,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="零件数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsb-NK-ZdS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="零件数" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tsb-NK-ZdS">
                                 <rect key="frame" x="440" y="465" width="51" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>

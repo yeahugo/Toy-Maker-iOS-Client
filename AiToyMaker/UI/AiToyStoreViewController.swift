@@ -66,7 +66,8 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
         var cell:AiCollectionViewCell = collectionView.dequeueReusableCellWithReuseIdentifier(collectionCellIdentifier, forIndexPath: indexPath) as AiCollectionViewCell
         
         println(self.models[indexPath.row].valueForKey("thumbnail"))
-        var thumbnailString:String = self.models[indexPath.row].valueForKey("thumbnail") as String
+        var toyDic = self.models[indexPath.row]
+        var thumbnailString:String = toyDic.valueForKey("thumbnail") as String
         let range:Range = Range(start: advance(thumbnailString.startIndex, 1), end: advance(thumbnailString.endIndex, -1))
         thumbnailString = thumbnailString.substringWithRange(range)
         let thumbnailArray:Array = thumbnailString.componentsSeparatedByString(",")
@@ -76,6 +77,7 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
         ImageLoader.sharedLoader.imageForUrl(imageUrl, completionHandler:{(image: UIImage?, url: String) in
             cell.imageView.image = image
         })
+        cell.titleLabel.text = toyDic.valueForKey("name")? as? String
         
 //        let imageName = (self.images?[indexPath.row])?
 //        cell.imageView.image = UIImage(named: imageName!)
@@ -85,8 +87,8 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         let detailViewController:AiToyDetailViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ToyDetail") as AiToyDetailViewController
-        let imageName = self.images?[indexPath.row]
-        detailViewController.portraitImageName = imageName
+        var toyDic = self.models[indexPath.row]
+        detailViewController.toyId = toyDic.valueForKey("id") as String
         self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 
