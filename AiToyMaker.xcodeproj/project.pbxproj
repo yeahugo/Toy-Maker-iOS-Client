@@ -15,6 +15,9 @@
 		D51C08991A43167E00031840 /* AiToyMakerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C08981A43167E00031840 /* AiToyMakerTests.swift */; };
 		D51C08A31A4319B300031840 /* AiToyStoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */; };
 		D51E70AA1A45B16E00394ACB /* AiToyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51E70A91A45B16E00394ACB /* AiToyDetailViewController.swift */; };
+		D51E70DA1A46C67500394ACB /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D51E70D51A46C64900394ACB /* Alamofire.framework */; };
+		D51E70DD1A46C76200394ACB /* Alamofire.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D51E70D51A46C64900394ACB /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D51E70E01A46CC8500394ACB /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = D51E70DF1A46CC8500394ACB /* ImageLoader.swift */; };
 		D5556B3B1A45757B003F2C94 /* a.png in Resources */ = {isa = PBXBuildFile; fileRef = D5556B271A45757B003F2C94 /* a.png */; };
 		D5556B3C1A45757B003F2C94 /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = D5556B281A45757B003F2C94 /* b.png */; };
 		D5556B3D1A45757B003F2C94 /* c.png in Resources */ = {isa = PBXBuildFile; fileRef = D5556B291A45757B003F2C94 /* c.png */; };
@@ -46,28 +49,42 @@
 			remoteGlobalIDString = D51C087C1A43167E00031840;
 			remoteInfo = AiToyMaker;
 		};
-		D539084D1A45244600538932 /* PBXContainerItemProxy */ = {
+		D51E70D41A46C64900394ACB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+			containerPortal = D51E70CF1A46C64900394ACB /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
 			remoteInfo = Alamofire;
 		};
-		D539084F1A45244600538932 /* PBXContainerItemProxy */ = {
+		D51E70D61A46C64900394ACB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+			containerPortal = D51E70CF1A46C64900394ACB /* Alamofire.xcodeproj */;
 			proxyType = 2;
 			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
 			remoteInfo = AlamofireTests;
 		};
-		D5556B221A452480003F2C94 /* PBXContainerItemProxy */ = {
+		D51E70D81A46C66B00394ACB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+			containerPortal = D51E70CF1A46C64900394ACB /* Alamofire.xcodeproj */;
 			proxyType = 1;
 			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
 			remoteInfo = Alamofire;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D51E70DB1A46C70500394ACB /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D51E70DD1A46C76200394ACB /* Alamofire.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D51C087D1A43167E00031840 /* AiToyMaker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AiToyMaker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -82,7 +99,8 @@
 		D51C08981A43167E00031840 /* AiToyMakerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiToyMakerTests.swift; sourceTree = "<group>"; };
 		D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AiToyStoreViewController.swift; path = UI/AiToyStoreViewController.swift; sourceTree = "<group>"; };
 		D51E70A91A45B16E00394ACB /* AiToyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AiToyDetailViewController.swift; path = UI/AiToyDetailViewController.swift; sourceTree = "<group>"; };
-		D53908481A45244600538932 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D51E70CF1A46C64900394ACB /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Frameworks/Alamofire/Alamofire.xcodeproj; sourceTree = SOURCE_ROOT; };
+		D51E70DF1A46CC8500394ACB /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageLoader.swift; path = Frameworks/SwiftImageLoader/ImageLoader.swift; sourceTree = SOURCE_ROOT; };
 		D5556B271A45757B003F2C94 /* a.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = a.png; sourceTree = "<group>"; };
 		D5556B281A45757B003F2C94 /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
 		D5556B291A45757B003F2C94 /* c.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = c.png; sourceTree = "<group>"; };
@@ -111,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D51E70DA1A46C67500394ACB /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,7 +164,8 @@
 		D51C087F1A43167E00031840 /* AiToyMaker */ = {
 			isa = PBXGroup;
 			children = (
-				D53908481A45244600538932 /* Alamofire.xcodeproj */,
+				D51E70DE1A46CC7300394ACB /* Frameworks */,
+				D51E70CF1A46C64900394ACB /* Alamofire.xcodeproj */,
 				D51C08821A43167E00031840 /* AppDelegate.swift */,
 				D51C08841A43167E00031840 /* ViewController.swift */,
 				D51C08A21A4319B300031840 /* AiToyStoreViewController.swift */,
@@ -185,13 +205,21 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		D53908491A45244600538932 /* Products */ = {
+		D51E70D01A46C64900394ACB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D539084E1A45244600538932 /* Alamofire.framework */,
-				D53908501A45244600538932 /* AlamofireTests.xctest */,
+				D51E70D51A46C64900394ACB /* Alamofire.framework */,
+				D51E70D71A46C64900394ACB /* AlamofireTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D51E70DE1A46CC7300394ACB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D51E70DF1A46CC8500394ACB /* ImageLoader.swift */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D5556B261A45757B003F2C94 /* Avatar */ = {
@@ -232,11 +260,12 @@
 				D51C08791A43167E00031840 /* Sources */,
 				D51C087A1A43167E00031840 /* Frameworks */,
 				D51C087B1A43167E00031840 /* Resources */,
+				D51E70DB1A46C70500394ACB /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				D5556B231A452480003F2C94 /* PBXTargetDependency */,
+				D51E70D91A46C66B00394ACB /* PBXTargetDependency */,
 			);
 			name = AiToyMaker;
 			productName = AiToyMaker;
@@ -272,6 +301,7 @@
 				TargetAttributes = {
 					D51C087C1A43167E00031840 = {
 						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 486K7NX823;
 					};
 					D51C08911A43167E00031840 = {
 						CreatedOnToolsVersion = 6.1;
@@ -292,8 +322,8 @@
 			projectDirPath = "";
 			projectReferences = (
 				{
-					ProductGroup = D53908491A45244600538932 /* Products */;
-					ProjectRef = D53908481A45244600538932 /* Alamofire.xcodeproj */;
+					ProductGroup = D51E70D01A46C64900394ACB /* Products */;
+					ProjectRef = D51E70CF1A46C64900394ACB /* Alamofire.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -305,18 +335,18 @@
 /* End PBXProject section */
 
 /* Begin PBXReferenceProxy section */
-		D539084E1A45244600538932 /* Alamofire.framework */ = {
+		D51E70D51A46C64900394ACB /* Alamofire.framework */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.framework;
 			path = Alamofire.framework;
-			remoteRef = D539084D1A45244600538932 /* PBXContainerItemProxy */;
+			remoteRef = D51E70D41A46C64900394ACB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		D53908501A45244600538932 /* AlamofireTests.xctest */ = {
+		D51E70D71A46C64900394ACB /* AlamofireTests.xctest */ = {
 			isa = PBXReferenceProxy;
 			fileType = wrapper.cfbundle;
 			path = AlamofireTests.xctest;
-			remoteRef = D539084F1A45244600538932 /* PBXContainerItemProxy */;
+			remoteRef = D51E70D61A46C64900394ACB /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
@@ -368,6 +398,7 @@
 			files = (
 				D51C08851A43167E00031840 /* ViewController.swift in Sources */,
 				D51C08A31A4319B300031840 /* AiToyStoreViewController.swift in Sources */,
+				D51E70E01A46CC8500394ACB /* ImageLoader.swift in Sources */,
 				D5556B501A45A46B003F2C94 /* AiCollectionViewCell.swift in Sources */,
 				D51E70AA1A45B16E00394ACB /* AiToyDetailViewController.swift in Sources */,
 				D51C08831A43167E00031840 /* AppDelegate.swift in Sources */,
@@ -390,10 +421,10 @@
 			target = D51C087C1A43167E00031840 /* AiToyMaker */;
 			targetProxy = D51C08931A43167E00031840 /* PBXContainerItemProxy */;
 		};
-		D5556B231A452480003F2C94 /* PBXTargetDependency */ = {
+		D51E70D91A46C66B00394ACB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = Alamofire;
-			targetProxy = D5556B221A452480003F2C94 /* PBXContainerItemProxy */;
+			targetProxy = D51E70D81A46C66B00394ACB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -499,22 +530,28 @@
 		D51C089D1A43167E00031840 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ye Jiahuan (X9YM766L8L)";
 				INFOPLIST_FILE = AiToyMaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Debug;
 		};
 		D51C089E1A43167E00031840 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer: Ye Jiahuan (X9YM766L8L)";
 				INFOPLIST_FILE = AiToyMaker/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = "arm64 armv7s armv7";
 			};
 			name = Release;
 		};
