@@ -11,12 +11,13 @@ import Alamofire
 
 class AiToyDetailViewController: UIViewController {
 
-    @IBOutlet var portraitImageView:UIImageView!
+    @IBOutlet var printTime:UILabel!
+    @IBOutlet var objectSize:UILabel!
+    @IBOutlet var partNum:UILabel!
     @IBOutlet var titleLabel:UILabel!
-//    var portraitImageName:NSString!
+    @IBOutlet var scrollView:UIScrollView!
     var toyId:String!
     var toyDic:NSDictionary!
-//    var hostName:String = "http://192.168.1.103:8000/"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,12 +28,25 @@ class AiToyDetailViewController: UIViewController {
             .responseJSON { (request, response, JSON, error) -> Void in
                 self.toyDic = JSON as NSDictionary
                 self.titleLabel.text = self.toyDic.valueForKey("name") as? String
-                var imageName:String = self.toyDic.valueForKey("images")?.firstObject? as String
-                var imageUrl = hostName + imageName
-                ImageLoader.sharedLoader.imageForUrl(imageUrl, completionHandler:{(image: UIImage?, url: String) in
-                    self.portraitImageView.image = image
-                })
-                println(self.toyDic)
+                var imageNames = self.toyDic.valueForKey("images") as [String]
+                for var index = 0;index < imageNames.count; index++ {
+                    var imageName:String = self.toyDic.valueForKey("images")?[index]? as String
+                    var imageUrl = hostName + imageName
+                    var startX = CGFloat(index) * self.scrollView.frame.size.width
+                    ImageLoader.sharedLoader.imageForUrl(imageUrl, completionHandler:{(image: UIImage?, url: String) in
+                        var imageView:UIImageView = UIImageView(image: image)
+                        imageView.frame = CGRectMake(startX, 0, self.scrollView.frame.size.width, self.scrollView.frame.size.height)
+                        self.scrollView.addSubview(imageView)
+                    })
+                    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * CGFloat(imageNames.count), self.scrollView.frame.size.height)
+                }
+                self.printTime.text = self.toyDic.valueForKey("print_time")? as? String
+                var partNum:Int = self.toyDic.valueForKey("parts_num") as Int
+                println("partNum is ")
+                println(partNum)
+                self.partNum.text = String(partNum)
+                self.objectSize.text = self.toyDic.valueForKey("object_size")? as? String
+                println(self.toyDic.valueForKey("parts_num")?)
         }
 //        self.portraitImageView.image = UIImage(named: portraitImageName)
         // Do any additional setup after loading the view.

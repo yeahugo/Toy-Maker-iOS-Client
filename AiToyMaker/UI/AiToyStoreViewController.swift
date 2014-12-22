@@ -13,7 +13,7 @@ enum ModelType{
     case Cartoon,Pinzhuang
 }
 
-var hostName:String = "http://192.168.1.108:8000/"
+var hostName:String = "http://192.168.1.107:8000/"
 
 class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
