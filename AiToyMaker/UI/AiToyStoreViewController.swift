@@ -13,12 +13,14 @@ enum ModelType{
     case Cartoon,Pinzhuang
 }
 
+var hostName:String = "http://192.168.1.108:8000/"
+
 class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
     let collectionCellIdentifier = "CollectionCell"
     var images:[String]?
     var models:[NSDictionary] = []
-    var hostName:String = "http://192.168.1.103:8000/"
+
     var modelType = ModelType.Cartoon
     
     @IBOutlet var collectionView:UICollectionView!
@@ -27,9 +29,23 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
     @IBAction func changeModelsFilter(sender: UISegmentedControl){
         switch sender.selectedSegmentIndex {
         case 0:
-            modelType = .Cartoon
+            var urlString = hostName + "models/catalog/5490cb83884bebe72f62acb8"
+            Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON)
+                .responseJSON { (request, response, JSON, error) -> Void in
+                    //                println( JSON)
+                    self.models = JSON as [NSDictionary]
+                    println(self.models)
+                    self.collectionView.reloadData()
+            }
         case 1:
-            modelType = .Pinzhuang
+            var urlString = hostName + "models/catalog/5490cb7c884bebe72f62acb7"
+            Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON)
+                .responseJSON { (request, response, JSON, error) -> Void in
+                    //                println( JSON)
+                    self.models = JSON as [NSDictionary]
+                    println(self.models)
+                    self.collectionView.reloadData()
+            }
         default:
             println("Bad segment index!")
         }
@@ -40,7 +56,6 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
         self.collectionView.dataSource = self
         images = ["a.png",  "b.png", "c.png", "d.png", "e.png", "f.png", "g.png", "h.png",  "j.png", "k.png", "l.png", "m.png"]
         
-//        AlamofireErrorDomain
         var urlString = hostName + "models/catalog/5490cb83884bebe72f62acb8"
         Alamofire.request(.GET, urlString, parameters: nil, encoding: .JSON)
             .responseJSON { (request, response, JSON, error) -> Void in
@@ -73,7 +88,7 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
         let thumbnailArray:Array = thumbnailString.componentsSeparatedByString(",")
         var imageName = thumbnailArray.first!
         imageName = imageName.substringWithRange(Range(start: advance(imageName.startIndex, 1), end: advance(imageName.endIndex,-1)))
-        let imageUrl = self.hostName + imageName
+        let imageUrl = hostName + imageName
         ImageLoader.sharedLoader.imageForUrl(imageUrl, completionHandler:{(image: UIImage?, url: String) in
             cell.imageView.image = image
         })
