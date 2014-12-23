@@ -42,14 +42,9 @@ class AiToyDetailViewController: UIViewController {
                 }
                 self.printTime.text = self.toyDic.valueForKey("print_time")? as? String
                 var partNum:Int = self.toyDic.valueForKey("parts_num") as Int
-                println("partNum is ")
-                println(partNum)
                 self.partNum.text = String(partNum)
                 self.objectSize.text = self.toyDic.valueForKey("object_size")? as? String
-                println(self.toyDic.valueForKey("parts_num")?)
         }
-//        self.portraitImageView.image = UIImage(named: portraitImageName)
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

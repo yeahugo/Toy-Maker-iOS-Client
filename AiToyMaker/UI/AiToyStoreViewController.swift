@@ -13,7 +13,7 @@ enum ModelType{
     case Cartoon,Pinzhuang
 }
 
-var hostName:String = "http://192.168.1.107:8000/"
+var hostName:String = "http://192.168.1.117:8000/"
 
 class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICollectionViewDelegate {
     
@@ -74,7 +74,6 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return self.models.count
-//        return self.images!.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
@@ -82,20 +81,12 @@ class AiToyStoreViewController: UIViewController,UICollectionViewDataSource,UICo
         
         println(self.models[indexPath.row].valueForKey("thumbnail"))
         var toyDic = self.models[indexPath.row]
-        var thumbnailString:String = toyDic.valueForKey("thumbnail") as String
-        let range:Range = Range(start: advance(thumbnailString.startIndex, 1), end: advance(thumbnailString.endIndex, -1))
-        thumbnailString = thumbnailString.substringWithRange(range)
-        let thumbnailArray:Array = thumbnailString.componentsSeparatedByString(",")
-        var imageName = thumbnailArray.first!
-        imageName = imageName.substringWithRange(Range(start: advance(imageName.startIndex, 1), end: advance(imageName.endIndex,-1)))
+        var imageName:String = toyDic.valueForKey("thumbnail")?.firstObject as String
         let imageUrl = hostName + imageName
         ImageLoader.sharedLoader.imageForUrl(imageUrl, completionHandler:{(image: UIImage?, url: String) in
             cell.imageView.image = image
         })
         cell.titleLabel.text = toyDic.valueForKey("name")? as? String
-        
-//        let imageName = (self.images?[indexPath.row])?
-//        cell.imageView.image = UIImage(named: imageName!)
         
         return cell
     }
